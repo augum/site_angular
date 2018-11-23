@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading" align="center"><h4>{{hotel.denomination}}</h4></div>
+        <div class="panel-body">
+          <img  id="img2" src="http://hotel:8080/img/{{hotel.photo}}" alt="voir plus" width="350" height="350" >
+          <img class="img-circle" id="img3" src="http://hotel:8080/img/{{hotel.photo1}}" alt="voir plus" width="150" height="150" >
+          <img id="img4" src="http://hotel:8080/img/{{hotel.photo2}}" alt="voir plus" width="150" height="150" >
+
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>Commentaire</h3> <br>
+      <p>{{hotel.commentaire}}</p><br>
+      <hr>
+      <h3>Contact</h3> <br>
+      <p>Commune: {{hotel.commune}}</p>
+      <h5>Adresse: {{hotel.adresse}}</h5>
+      <h5>Téléphone: {{hotel.telephone}}</h5>
+      <h5>Email: {{hotel.mail}}</h5><br><br>
+      <button type="submit" class="btn btn-info" (click)="goback()">Retour</button>
+    </div>
+  </div>
+
+</div>
+
+

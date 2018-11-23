@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Critères de recherche</div>
+        <div class="panel-body">
+          <form #f="ngForm" (ngSubmit)="onCherche(f.value)">
+            <div class="form-group">
+              <label name="commune" ngModel>Commune:</label>
+              <select name="commune" ngModel style="width: 30%;">
+                <option value="Kinshasa">Kinshasa</option>
+                <option value="Limete">Limete</option>
+                <option value="Masina">Masina</option>
+                <option value="Matete">Matete</option>
+                <option value="Gombe">Gombe</option>
+                <option value="lemba">Lemba</option>
+              </select>
+              <label>Edifice:</label>
+              <select name="type" ngModel style="width: 30%;">
+                <option value="1">Trouvez un restaurant</option>
+                <option value="2">Trouvez un hotel</option>
+                <option value="3">Trouvez une salle de fete</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Chercher</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <p *ngIf="search" style="color: #0000F0"> Chargement...</p>
+      <p>Resultat</p>
+      <div *ngIf="hotels">
+        <div *ngFor="let hotel  of hotels" class="col-md-2">
+          <div class="panel panel-info" >
+            <div class="panel-heading">
+              <div><a routerLink="/detail/{{hotel.id}}">{{hotel.denomination}}</a></div>
+            </div>
+            <div class="panel-body">
+              <a routerLink="/detail/{{hotel.id}}"> <img src="http://hotel:8080/img/{{hotel.photo}}" alt="voir plus" width="100" height="100" >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2 panel panel-info">
+      <div class="panel-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
